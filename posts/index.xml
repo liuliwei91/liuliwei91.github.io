@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>123</copyright>
-    <lastBuildDate>Sat, 08 Jan 2022 15:41:21 +0800</lastBuildDate><atom:link href="https://liuliwei91.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Mar 2022 15:03:01 +0800</lastBuildDate><atom:link href="https://liuliwei91.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>k8s install</title>
+      <link>https://liuliwei91.github.io/2022/03/k8s-install/</link>
+      <pubDate>Thu, 24 Mar 2022 15:03:01 +0800</pubDate>
+      
+      <guid>https://liuliwei91.github.io/2022/03/k8s-install/</guid>
+      <description>&lt;h3 id=&#34;0安装docker&#34;&gt;0.安装docker&lt;/h3&gt;
+&lt;p&gt;系统选型，由于centos已停止维护，建议使用ubuntu 20.04.4 LTS&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://releases.ubuntu.com/20.04/&#34;&gt;Ubuntu 20.04.4 LTS (Focal Fossa)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://releases.ubuntu.com/20.04/ubuntu-20.04.4-live-server-amd64.iso&#34;&gt;https://releases.ubuntu.com/20.04/ubuntu-20.04.4-live-server-amd64.iso&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>git使用教程</title>
       <link>https://liuliwei91.github.io/2022/01/git%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>

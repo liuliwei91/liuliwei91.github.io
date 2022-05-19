@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="k8s install 0.安装docker 系统选型，由于centos已停止维护，建议使用ubuntu 20.04.4 LTS
+Ubuntu 20.04.4 LTS (Focal Fossa)
+https://releases.ubuntu.com/20.04/ubuntu-20.04.4-live-server-amd64.iso
+vi /etc/apt/sources.list#建议修改为阿里云源，速度更快，将文件内容清空，完全替换即可deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiversedeb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiversedeb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiversedeb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiversedeb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiversedeb-src http://mirrors." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bloggg.top/1/01/" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="k8s install 0.安装docker 系统选型，由于centos已停止维护，建议使用ubuntu 20.04.4 LTS
+Ubuntu 20.04.4 LTS (Focal Fossa)
+https://releases.ubuntu.com/20.04/ubuntu-20.04.4-live-server-amd64.iso
+vi /etc/apt/sources.list#建议修改为阿里云源，速度更快，将文件内容清空，完全替换即可deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiversedeb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiversedeb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiversedeb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiversedeb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiversedeb-src http://mirrors."/>
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "url": "https://bloggg.top/1/01/",
+  "wordCount": "294",
+  "datePublished": "0001-01-01T00:00:00+00:00",
+  "author": {
+    "@type": "Person",
+    "name": "Wayne Liu"
+  }
+}
+</script>
+
+
+
+    <link rel="canonical" href="https://bloggg.top/1/01/">
+
+    <title> | Notes</title>
+
+    
+    <!-- combined, minified CSS -->
+    
+    <link href="https://bloggg.top/css/style.876bbe11cfbbf3aedf883f4804dc283a275cd7f8b4ed0b540812126132c20313.css" rel="stylesheet" integrity="sha256-h2u&#43;Ec&#43;7867fiD9IBNwoOidc1/i07QtUCBISYTLCAxM=" crossorigin="anonymous">
+    
+
+    <!-- minified Font Awesome for SVG icons -->
+    
+    <script defer src="https://bloggg.top/js/fontawesome.min.a290d22177f491b8a83b0ee7eb739224c57ab052d8fab69d8f52aab860e42027.js" integrity="sha256-opDSIXf0kbioOw7n63OSJMV6sFLY&#43;radj1KquGDkICc=" crossorigin="anonymous"></script>
+
+    <!-- RSS 2.0 feed -->
+    
+
+    
+
+  </head>
+
+  <body>
+
+    
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="nav blog-nav">
+          <a class="nav-link " href="https://bloggg.top">Home</a>
+          
+          <a class="nav-link" href="/about" title="">about</a>
+          
+        </nav>
+      </div>
+    </div>
+    
+
+    
+    
+    <header class="blog-header">
+      <div class="container">
+        <h1 class="blog-title" dir="auto"><a href="https://bloggg.top" rel="home">Notes</a></h1>
+        <p class="lead blog-description" dir="auto">notes</p>
+      </div>
+    </header>
+    
+    
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+
+          
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title" dir="auto"><a href="https://bloggg.top/1/01/"></a></h2>
+    <p class="blog-post-meta">
+
+</p>
+  </header>
+  <h1 id="k8s-install">k8s install</h1>
+<h3 id="0安装docker">0.安装docker</h3>
+<p>系统选型，由于centos已停止维护，建议使用ubuntu 20.04.4 LTS</p>
+<p><a href="https://releases.ubuntu.com/20.04/">Ubuntu 20.04.4 LTS (Focal Fossa)</a></p>
+<p><a href="https://releases.ubuntu.com/20.04/ubuntu-20.04.4-live-server-amd64.iso">https://releases.ubuntu.com/20.04/ubuntu-20.04.4-live-server-amd64.iso</a></p>
+<pre tabindex="0"><code>vi /etc/apt/sources.list
+#建议修改为阿里云源，速度更快，将文件内容清空，完全替换即可
+
+deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+
+</code></pre><p>添加阿里云docker-ce源，并安装docker-ce</p>
+<pre tabindex="0"><code># step 1: 安装必要的一些系统工具
+sudo apt-get update
+sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
+# step 2: 安装GPG证书
+curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
+# Step 3: 写入软件源信息
+sudo add-apt-repository &quot;deb [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable&quot;
+# Step 4: 更新并安装Docker-CE
+sudo apt-get -y update
+sudo apt-get -y install docker-ce
+</code></pre><p>为了避免和k8s冲突，修改docker的cgroupdriver为systemd；并且配置阿里云容器加速。</p>
+<pre tabindex="0"><code>vi /etc/docker/daemon.json
+{
+  &quot;registry-mirrors&quot;: [&quot;https://xxxxxx.mirror.aliyuncs.com&quot;],
+  &quot;exec-opts&quot;: [&quot;native.cgroupdriver=systemd&quot;]
+}
+
+#执行下列命令使配置生效,&quot;registry-mirrors&quot;,请自行去阿里云申请，并替换为自己的。
+systemctl daemon-reload
+systemctl restart docker
+</code></pre><h3 id="1允许iptables查看网桥流量">1.允许iptables查看网桥流量</h3>
+<pre tabindex="0"><code>cat &lt;&lt;EOF | sudo tee /etc/modules-load.d/k8s.conf
+br_netfilter
+EOF
+</code></pre><pre tabindex="0"><code>cat &lt;&lt;EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+</code></pre><pre tabindex="0"><code>sudo sysctl --system
+</code></pre><h3 id="2安装相关软件包">2.安装相关软件包</h3>
+<pre tabindex="0"><code>sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates curl
+</code></pre><h3 id="3安装kubeadm">3.安装kubeadm</h3>
+<pre tabindex="0"><code>sudo curl -s https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add -
+</code></pre><h3 id="4添加k8s阿里源到apt">4.添加k8s阿里源到apt</h3>
+<pre tabindex="0"><code>sudo tee /etc/apt/sources.list.d/kubernetes.list &lt;&lt;-'EOF'
+deb https://mirrors.aliyun.com/kubernetes/apt kubernetes-xenial main
+EOF
+</code></pre><h3 id="5安装kubelet-kubeadm-and-kubectl">5.安装kubelet, kubeadm and kubectl</h3>
+<pre tabindex="0"><code>sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+</code></pre><h3 id="6kubeadm-初始化">6.kubeadm 初始化</h3>
+<pre tabindex="0"><code>kubeadm init \
+ --image-repository registry.aliyuncs.com/google_containers \
+ --kubernetes-version v1.23.5 \
+ --pod-network-cidr=192.168.0.0/16 \
+ --apiserver-advertise-address=192.168.38.10
+</code></pre><pre tabindex="0"><code>--cri-socket /run/containerd/containerd.sock
+#若想使用containerd替换docker可以在初始化时加入此参数
+</code></pre><p>&ndash;image-repository替换为阿里源</p>
+<p>&ndash;apiserver-advertise-address指定了服务器本身固定不变的的ip。</p>
+<p>&ndash;pod-network-cidr指定了pod通信的网段，不能和服务器的网段冲突。</p>
+<p>初始化完成后，需按照最后的提示复制kubeconfig配置，记录join命令</p>
+<pre tabindex="0"><code>mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+</code></pre><pre tabindex="0"><code>kubeadm join 192.168.38.10:6443 --token l9fqdy.9shxi3dw99rjutd0 \
+	--discovery-token-ca-cert-hash sha256:0b03253f3f16585e5dbc5345eabc33347125e5255e73103ab76e711608cdb725
+</code></pre><h3 id="7安装网络cni插件">7.安装网络cni插件</h3>
+<p><a href="https://projectcalico.docs.tigera.io/getting-started/kubernetes/quickstart">Quickstart for Calico on Kubernetes (tigera.io)</a></p>
+<pre tabindex="0"><code>kubectl create -f https://docs.projectcalico.org/manifests/tigera-operator.yaml
+kubectl create -f https://docs.projectcalico.org/manifests/custom-resources.yaml
+</code></pre><h3 id="8其他node按照1-5安装后可以执行6中得到join命令即可加入集群">8.其他node按照1-5安装后，可以执行6中得到join命令，即可加入集群</h3>
+<p>若想要使用单节点集群，可执行下列命令去掉master的污点。</p>
+<pre tabindex="0"><code>kubectl taint nodes --all node-role.kubernetes.io/master-
+</code></pre>
+
+  
+
+  
+
+</article> 
+
+
+
+        </div> <!-- /.blog-main -->
+
+        <aside class="col-sm-3 ml-auto blog-sidebar">
+  
+  <section class="sidebar-module sidebar-module-inset">
+    <h4>About</h4>
+    <p dir="auto">a Gopher,K8s engineer</p>
+  </section>
+  
+
+  
+        <section class="sidebar-module">
+    <h4>Recent Posts</h4>
+    <ol class="list-unstyled">
+
+
+<li><a href="/2022/01/git%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">git使用教程</a></li>
+
+<li><a href="/1/01/"></a></li>
+
+    </ol>
+  </section>
+
+  
+
+  
+  <section class="sidebar-module">
+    <h4>Links</h4>
+    <ol class="list-unstyled">
+      
+      <li><a href="https://gohugo.io/">hugo</a></li>
+      
+    </ol>
+  </section>
+  
+</aside>
+
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+    
+
+    
+    <footer class="blog-footer">
+      <p dir="auto">
+      
+      123
+      
+      </p>
+      <p>
+      <a href="#">Back to top</a>
+      </p>
+    </footer>
+    
+
+  </body>
+
+</html>
