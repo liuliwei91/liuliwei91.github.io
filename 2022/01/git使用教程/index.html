@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<meta property="og:title" content="git使用教程" />
+<meta property="og:description" content="0.安装并配置git
+下载地址：&lt;Git (git-scm.com)&gt;
+下载对应系统版本的git，并一路next安装即可，都保持默认即可。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://liuliwei91.github.io/2022/01/git%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" />
+<meta property="article:published_time" content="2022-01-08T15:41:21+08:00" />
+<meta property="article:modified_time" content="2022-01-08T15:41:21+08:00" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="git使用教程"/>
+<meta name="twitter:description" content="0.安装并配置git
+下载地址：&lt;Git (git-scm.com)&gt;
+下载对应系统版本的git，并一路next安装即可，都保持默认即可。"/>
+<meta name="generator" content="Hugo 0.91.2" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "git使用教程",
+  "url": "https://liuliwei91.github.io/2022/01/git%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/",
+  "wordCount": "308",
+  "datePublished": "2022-01-08T15:41:21+08:00",
+  "dateModified": "2022-01-08T15:41:21+08:00",
+  "author": {
+    "@type": "Person",
+    "name": "Wayne Liu"
+  }
+}
+</script>
+
+
+
+    <link rel="canonical" href="https://liuliwei91.github.io/2022/01/git%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">
+
+    <title>git使用教程 | Notes</title>
+
+    
+    <!-- combined, minified CSS -->
+    
+    <link href="https://liuliwei91.github.io/css/style.beb8012edc08ba10be012f079d618dc243812267efe62e11f22fe49618f976a4.css" rel="stylesheet" integrity="sha256-vrgBLtwIuhC&#43;AS8HnWGNwkOBImfv5i4R8i/klhj5dqQ=" crossorigin="anonymous">
+    
+
+    <!-- minified Font Awesome for SVG icons -->
+    
+    <script defer src="https://liuliwei91.github.io/js/fontawesome.min.f5072c55a0721857184db93a50561d7dc13975b4de2e19db7f81eb5f3fa57270.js" integrity="sha256-9QcsVaByGFcYTbk6UFYdfcE5dbTeLhnbf4HrXz&#43;lcnA=" crossorigin="anonymous"></script>
+
+    <!-- RSS 2.0 feed -->
+    
+
+    
+
+  </head>
+
+  <body>
+
+    
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="nav blog-nav">
+          <a class="nav-link " href="https://liuliwei91.github.io/">Home</a>
+          
+          <a class="nav-link" href="/about" title="">about</a>
+          
+        </nav>
+      </div>
+    </div>
+    
+
+    
+    
+    <header class="blog-header">
+      <div class="container">
+        <h1 class="blog-title" dir="auto"><a href="https://liuliwei91.github.io/" rel="home">Notes</a></h1>
+        <p class="lead blog-description" dir="auto">notes</p>
+      </div>
+    </header>
+    
+    
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+
+          
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title" dir="auto"><a href="https://liuliwei91.github.io/2022/01/git%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">git使用教程</a></h2>
+    <p class="blog-post-meta">
+<time datetime="2022-01-08T15:41:21+08:00">Sat Jan 08, 2022</time>
+</p>
+  </header>
+  <h2 id="0安装并配置git">0.安装并配置git</h2>
+<p>下载地址：&lt;<a href="https://git-scm.com/">Git (git-scm.com)</a>&gt;</p>
+<p>下载对应系统版本的git，并一路next安装即可，都保持默认即可。</p>
+<p>执行下面命令配置全局用户名和邮箱</p>
+<pre tabindex="0"><code>git config --global user.name &quot;xxx&quot;
+git config --global user.email xxx@example.com
+</code></pre><p>此配置保存在用户家目录下的.gitconfig中，查看配置可以执行</p>
+<p><code>git config --global -l</code></p>
+<h2 id="1创建新仓库">1.创建新仓库</h2>
+<pre tabindex="0"><code>mkdir test
+cd test
+git init
+</code></pre><h2 id="2检出仓库">2.检出仓库</h2>
+<p><code>git clone https://gitee.com/liuliwei91/notes.git</code></p>
+<h2 id="3添加和提交">3.添加和提交</h2>
+<pre tabindex="0"><code>git add .
+git commit -m &quot;备注信息&quot;
+</code></pre><h2 id="4push到远程仓库">4.push到远程仓库</h2>
+<h3 id="添加远程仓库">添加远程仓库</h3>
+<p><code>git remote add git@gitee.com:liuliwei91/notes.git</code></p>
+<h3 id="push到远程仓主分支">push到远程仓主分支</h3>
+<p><code>git push origin master</code></p>
+<p>如果github或者gitee没有绑定本地的ssh公钥，会弹出输入账号密码</p>
+<h2 id="5生成并绑定ssh公钥">5.生成并绑定ssh公钥</h2>
+<h4 id="生成公钥">生成公钥</h4>
+<p>在git-bash中执行ssh-keygen，一路回车即可，生成的公钥和私钥保存在本地用户的家目录中的.ssh文件夹</p>
+<p><a href="https://imgtu.com/i/7PLwIf"><img src="https://s4.ax1x.com/2022/01/08/7PLwIf.png" alt="7PLwIf.png"></a></p>
+<h4 id="绑定公钥">绑定公钥</h4>
+<p>登录远程仓库，一般在设置&ndash;安全设置中可以绑定ssh公钥，例如码云：</p>
+<p><a href="https://imgtu.com/i/7PLBi8"><img src="https://s4.ax1x.com/2022/01/08/7PLBi8.png" alt="7PLBi8.png"></a></p>
+<p>将本地的id_rsa.pub使用txt打开，然后复制粘贴到公钥框里确定即可</p>
+<p>设置后再使用git push就无需密码验证了</p>
+<h2 id="6分支">6.分支</h2>
+<p>分支是用来将特性开发绝缘开来的。在你创建仓库的时候，<em>master</em> 是“默认的”。在其他分支上进行开发，完成后再将它们合并到主分支上。</p>
+<h4 id="创建一个dev分支并切换过去">创建一个dev分支，并切换过去：</h4>
+<p><code>git checkout -b dev</code></p>
+<h4 id="切换回主分支">切换回主分支：</h4>
+<p><code>git checkout master</code></p>
+<h4 id="删除分支">删除分支：</h4>
+<p><code>git branch -d dev</code></p>
+<h4 id="push到远程仓库">push到远程仓库</h4>
+<p><code>git push origin  dev</code></p>
+<h2 id="7更新与合并">7.更新与合并</h2>
+<h4 id="从远程仓库获取并-合并-远端的改动">从远程仓库获取并 合并 远端的改动</h4>
+<p><code>git pull</code></p>
+<h4 id="合并dev分支到master">合并dev分支到master</h4>
+<p><code>git merge dev</code></p>
+<p>合并不一定成功，会出现冲突的情况，这时候就需要你自己去修改解决冲突，解决后，执行add命令标记为合并成功</p>
+<p><code>git add &lt;filename&gt;</code></p>
+<p>合并前也可以使用diff命令查看区别</p>
+<p><code>git diff &lt;master&gt; &lt;dev&gt;</code></p>
+<h2 id="8取消暂存替换与回滚">8.取消暂存、替换与回滚</h2>
+<h3 id="取消暂存的文件">取消暂存的文件</h3>
+<p>接下来的两个小节演示如何操作暂存区和工作目录中已修改的文件。 这些命令在修改文件状态的同时，也会提示如何撤消操作。 例如，你已经修改了两个文件并且想要将它们作为两次独立的修改提交， 但是却意外地输入 <code>git add *</code> 暂存了它们两个。如何只取消暂存两个中的一个呢？ <code>git status</code> 命令提示了你：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-console" data-lang="console">$ git add *
+$ git status
+On branch master
+Changes to be committed:
+  (use &#34;git reset HEAD &lt;file&gt;...&#34; to unstage)
+<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    renamed:    README.md -&gt; README
+    modified:   CONTRIBUTING.md
+</code></pre></div><p>在 “Changes to be committed” 文字正下方，提示使用 <code>git reset HEAD ...</code> 来取消暂存。 所以，我们可以这样来取消暂存 <code>CONTRIBUTING.md</code> 文件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-console" data-lang="console">$ git reset HEAD CONTRIBUTING.md
+Unstaged changes after reset:
+M	CONTRIBUTING.md
+$ git status
+On branch master
+Changes to be committed:
+  (use &#34;git reset HEAD &lt;file&gt;...&#34; to unstage)
+<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    renamed:    README.md -&gt; README
+<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>Changes not staged for commit:
+  (use &#34;git add &lt;file&gt;...&#34; to update what will be committed)
+  (use &#34;git checkout -- &lt;file&gt;...&#34; to discard changes in working directory)
+<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    modified:   CONTRIBUTING.md
+</code></pre></div><h3 id="撤消对文件的修改">撤消对文件的修改</h3>
+<p>如果你并不想保留对 <code>CONTRIBUTING.md</code> 文件的修改怎么办？ 你该如何方便地撤消修改——将它还原成上次提交时的样子（或者刚克隆完的样子，或者刚把它放入工作目录时的样子）？ 幸运的是，<code>git status</code> 也告诉了你应该如何做。 在最后一个例子中，未暂存区域是这样：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-console" data-lang="console">Changes not staged for commit:
+  (use &#34;git add &lt;file&gt;...&#34; to update what will be committed)
+  (use &#34;git checkout -- &lt;file&gt;...&#34; to discard changes in working directory)
+<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    modified:   CONTRIBUTING.md
+</code></pre></div><p>它非常清楚地告诉了你如何撤消之前所做的修改。 让我们来按照提示执行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-console" data-lang="console">$ git checkout -- CONTRIBUTING.md
+$ git status
+On branch master
+Changes to be committed:
+  (use &#34;git reset HEAD &lt;file&gt;...&#34; to unstage)
+<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    renamed:    README.md -&gt; README
+</code></pre></div><p>可以看到那些修改已经被撤消了。</p>
+<h3 id="回滚到指定版本">回滚到指定版本</h3>
+<p>查看版本记录</p>
+<pre tabindex="0"><code>$ git log
+commit 13c95ba9f505a0650385b51d7dc5ef0174c15937 (HEAD -&gt; master, origin/master)
+Author: xxx &lt;xx@qq.com&gt;
+Date:   Sat Jan 8 14:09:29 2022 +0800
+
+    first commit
+
+</code></pre><p>回滚版本</p>
+<p><code>git reset --hard 13c95ba9f505a0650385b51d7dc5ef0174c15937 </code></p>
+
+  
+
+  
+
+</article> 
+
+
+
+        </div> <!-- /.blog-main -->
+
+        <aside class="col-sm-3 ml-auto blog-sidebar">
+  
+  <section class="sidebar-module sidebar-module-inset">
+    <h4>About</h4>
+    <p dir="auto">a Gopher,K8s engineer</p>
+  </section>
+  
+
+  
+        <section class="sidebar-module">
+    <h4>Recent Posts</h4>
+    <ol class="list-unstyled">
+
+
+<li><a href="/2022/01/git%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">git使用教程</a></li>
+
+    </ol>
+  </section>
+
+  
+
+  
+  <section class="sidebar-module">
+    <h4>Links</h4>
+    <ol class="list-unstyled">
+      
+      <li><a href="https://gohugo.io/">hugo</a></li>
+      
+    </ol>
+  </section>
+  
+</aside>
+
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+    
+
+    
+    <footer class="blog-footer">
+      <p dir="auto">
+      
+      123
+      
+      </p>
+      <p>
+      <a href="#">Back to top</a>
+      </p>
+    </footer>
+    
+
+  </body>
+
+</html>
